@@ -1,12 +1,12 @@
 import React from 'react';
 import {SafeAreaView, Text} from 'react-native';
 
-const Home = () => {
+const PicADays = () => {
   return (
     <SafeAreaView>
-      <Text>Home</Text>
+      <Text>PicADays</Text>
     </SafeAreaView>
   );
 };
 
-export default Home;
+export default PicADays;

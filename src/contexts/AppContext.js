@@ -1,7 +1,6 @@
 import React, {createContext, useState, useEffect} from 'react';
 import {I18nManager} from 'react-native';
 import RNRestart from 'react-native-restart';
-import {InAppMessage} from '../components';
 import {en} from '../locale/';
 import {Storage} from '../utils';
 
@@ -69,10 +68,5 @@ export const AppContextProvider = ({children}) => {
     onSetInAppMessage: val => setInAppMessage(val),
     onSetShowInAppMessage: val => setShowInAppMessage(val),
   };
-  return (
-    <AppContext.Provider value={value}>
-      <InAppMessage />
-      {children}
-    </AppContext.Provider>
-  );
+  return <AppContext.Provider value={value}>{children}</AppContext.Provider>;
 };

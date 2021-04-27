@@ -1,12 +1,12 @@
 import React from 'react';
 import {SafeAreaView, Text} from 'react-native';
 
-const Settings = () => {
+const AddAPic = () => {
   return (
     <SafeAreaView>
-      <Text>Settings</Text>
+      <Text>AddAPic</Text>
     </SafeAreaView>
   );
 };
 
-export default Settings;
+export default AddAPic;

@@ -1,5 +1,5 @@
-import Fasting from './Fasting';
-import Home from './Home';
-import Settings from './Settings';
+import AddAPic from './AddAPic';
+import PicADays from './PicADays';
+import Summary from './Summary';
 import Splash from './Splash';
-export {Fasting, Home, Settings, Splash};
+export {Splash, AddAPic, PicADays, Summary};

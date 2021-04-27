@@ -1,12 +1,12 @@
 import React from 'react';
 import {SafeAreaView, Text} from 'react-native';
 
-const Fasting = () => {
+const Summary = () => {
   return (
     <SafeAreaView>
-      <Text>Fasting</Text>
+      <Text>Summary</Text>
     </SafeAreaView>
   );
 };
 
-export default Fasting;
+export default Summary;

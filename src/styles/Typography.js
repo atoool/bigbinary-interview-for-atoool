@@ -1,4 +1,4 @@
-import { StyleSheet } from 'react-native';
+import {StyleSheet} from 'react-native';
 import Colors from './Colors';
 
 export default StyleSheet.create({
@@ -125,12 +125,6 @@ export default StyleSheet.create({
     fontWeight: 'bold',
     fontSize: 16,
     color: Colors.WHITE,
-    fontFamily: 'roboto',
-  },
-  timeLeft: {
-    fontSize: 16,
-    fontWeight: 'bold',
-    color: Colors.secondaryRed,
     fontFamily: 'roboto',
   },
 });

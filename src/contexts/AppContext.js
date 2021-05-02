@@ -8,18 +8,12 @@ const LOCALES = [{lan: 'English', locale: en, isRTL: false}];
 
 export const AppContext = createContext({
   locale: LOCALES[0],
-  showInAppMessage: false,
-  onSetShowInAppMessage: () => {},
-  inAppMessage: {title: '', body: ''},
-  onSetInAppMessage: () => {},
 });
 
 export const AppContextProvider = ({children}) => {
   //locale
   const [languages, setLanguages] = useState();
   const [locale, setLocale] = useState(LOCALES[0]);
-  const [showInAppMessage, setShowInAppMessage] = useState(false);
-  const [inAppMessage, setInAppMessage] = useState({title: '', body: ''});
 
   const loadLocale = async () => {
     try {
@@ -63,10 +57,6 @@ export const AppContextProvider = ({children}) => {
     locale,
     languages,
     changeLocale,
-    showInAppMessage,
-    inAppMessage,
-    onSetInAppMessage: val => setInAppMessage(val),
-    onSetShowInAppMessage: val => setShowInAppMessage(val),
   };
   return <AppContext.Provider value={value}>{children}</AppContext.Provider>;
 };

@@ -1,12 +1,17 @@
 import React from 'react';
-import {SafeAreaView, Text} from 'react-native';
+import {SafeAreaView, StyleSheet, Text} from 'react-native';
+import {Colors} from '../styles';
 
 const Summary = () => {
   return (
-    <SafeAreaView>
+    <SafeAreaView style={styles.container}>
       <Text>Summary</Text>
     </SafeAreaView>
   );
 };
+
+const styles = StyleSheet.create({
+  container: {flex: 1, backgroundColor: Colors.WHITE},
+});
 
 export default Summary;

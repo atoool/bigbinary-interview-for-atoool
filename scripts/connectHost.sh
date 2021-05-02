@@ -41,12 +41,12 @@ if [[ $failed == '' ]]
 else
 scanip="$(grep -oE '[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}' <<< "$myip").0/24"
 nmap -sP $scanip
-mac=$(grep ':' scripts/ma.txt)
+mac=$(grep ':' scripts/mac.txt)
 f=$(arp -a | grep "$mac")
 ip="$(grep -oE '[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}' <<< "$f")"
 if [[ $mac == '' ]]
 then
- echo "\n\n🛑 failed to connect to any device!!!\n\n🚀🚀 🤖 create a folder named mac.txt and add your device mac address 🚀🚀\n\n"
+ echo "\n\n🛑 failed to connect to any device!!!\n\n🚀🚀 🤖 create a file named mac.txt and add your device mac address 🚀🚀\n\n"
 elif [[ $ip != '' ]]
 then
  adb connect $ip:5555

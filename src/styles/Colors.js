@@ -31,7 +31,7 @@ export default {
   primaryRed: '#FFF5F5',
   lightViolet: '#889BFF',
   lightBlue: '#566ae6',
-  semiTransparent: 'rgba(0,0,0,0.1)',
+  semiTransparent: 'rgba(0,0,0,0.7)',
   transparent: 'rgba(0,0,0,0)',
   divider: '#DFDEDE',
   textInputBorder: '#C5C5C5',

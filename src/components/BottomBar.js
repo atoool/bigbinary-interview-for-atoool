@@ -37,7 +37,7 @@ const BottomBar = ({navigation, state, descriptors}) => {
           if (index === 1) {
             return (
               <Touchable
-                onPress={onPress}
+                onPress={() => navigation.navigate('AddAPost')}
                 style={styles.tabContainer}
                 key={index.toString()}>
                 <View style={styles.createTab}>

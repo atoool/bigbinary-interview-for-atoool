@@ -1,6 +1,6 @@
 import React from 'react';
 import {createStackNavigator} from '@react-navigation/stack';
-import {Splash} from '../screens';
+import {AddAPost, Splash} from '../screens';
 import TabNavigator from './TabNavigator';
 import {Header} from '../components';
 
@@ -11,6 +11,7 @@ const StackNavigator = () => {
     <Stack.Navigator screenOptions={{header: () => <Header />}}>
       <Stack.Screen name="Splash" component={Splash} />
       <Stack.Screen name="Main" component={TabNavigator} />
+      <Stack.Screen name="AddAPost" component={AddAPost} />
     </Stack.Navigator>
   );
 };

@@ -30,13 +30,13 @@ const Camera = () => {
           buttonNegative: 'Cancel',
         }}
         captureAudio={false}
-        playSoundOnCapture
-      />
-      <View style={styles.captureBox}>
-        <Touchable onPress={() => takePicture()} style={styles.capture}>
-          <Icon name="camera-lens-line" color={Colors.lightGreen} size={30} />
-        </Touchable>
-      </View>
+        playSoundOnCapture>
+        <View style={styles.captureBox}>
+          <Touchable onPress={() => takePicture()} style={styles.capture}>
+            <Icon name="camera-lens-line" color={Colors.lightGreen} size={30} />
+          </Touchable>
+        </View>
+      </RNCamera>
     </View>
   );
 };

@@ -8,7 +8,7 @@ const Stack = createStackNavigator();
 
 const StackNavigator = () => {
   return (
-    <Stack.Navigator screenOptions={{header: () => <Header />}}>
+    <Stack.Navigator screenOptions={{header: props => <Header {...props} />}}>
       <Stack.Screen name="Splash" component={Splash} />
       <Stack.Screen name="Main" component={TabNavigator} />
       <Stack.Screen name="AddAPost" component={AddAPost} />

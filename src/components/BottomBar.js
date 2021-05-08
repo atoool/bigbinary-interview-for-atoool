@@ -18,7 +18,7 @@ const BottomBar = ({navigation, state, descriptors}) => {
   return (
     <>
       <View style={[styles.row]}>
-        {state.routes.map((route, index) => {
+        {[state.routes[0], {}, state.routes[1]].map((route, index) => {
           const isFocused = state.index === index;
           const color = isFocused ? Colors.dark : Colors.tabBarInactive;
           //   const backgroundColor = 'red';

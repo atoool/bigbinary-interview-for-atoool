@@ -25,6 +25,7 @@ export default {
   historyBox: '#FCF2F2',
   offWhite: '#f5f5f5',
   tabBarInactive: '#D6D3D3',
+  gray: '#6C6C6C',
   WHITE: '#ffffff',
   BLACK: '#000000',
   primaryGreen: '#A1C349',

@@ -2,6 +2,12 @@ import {StyleSheet} from 'react-native';
 import Colors from './Colors';
 
 export default StyleSheet.create({
+  bold40: {
+    fontFamily: 'Inter-Regular',
+    fontWeight: 'bold',
+    fontSize: 40,
+    flexWrap: 'wrap',
+  },
   bold30: {
     fontFamily: 'Inter-Regular',
     fontWeight: 'bold',

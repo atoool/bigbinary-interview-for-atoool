@@ -39,4 +39,5 @@ export default {
   lightGreen: '#00E3BA',
   border: '#E8E8E8',
   dark: '#314743',
+  backButton: '#6C6C6C',
 };

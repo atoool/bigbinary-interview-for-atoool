@@ -3,10 +3,14 @@ import {SafeAreaView, StyleSheet} from 'react-native';
 import {PostList} from '../components';
 import {Colors} from '../styles';
 
-const PicADays = () => {
+const PicADays = ({navigation}) => {
+  const onPostClick = (item, i) => {
+    navigation.navigate('DayView', {item});
+  };
+
   return (
     <SafeAreaView style={styles.container}>
-      <PostList data={data} />
+      <PostList data={data} onPress={onPostClick} />
     </SafeAreaView>
   );
 };
@@ -23,6 +27,7 @@ const data = [
     location: 'Kochi, India',
     temperature: 24,
     date: dt,
+    desc: 'Another awesome morning, I can’t live a day without coffee',
   },
   {
     img:
@@ -30,6 +35,7 @@ const data = [
     location: 'Kochi, India',
     temperature: 24,
     date: dt,
+    desc: 'Another awesome morning, I can’t live a day without coffee',
   },
   {
     img:
@@ -37,6 +43,7 @@ const data = [
     location: 'Kochi, India',
     temperature: 24,
     date: dt,
+    desc: 'Another awesome morning, I can’t live a day without coffee',
   },
   {
     img:
@@ -44,6 +51,7 @@ const data = [
     location: 'Kochi, India',
     temperature: 24,
     date: dt,
+    desc: 'Another awesome morning, I can’t live a day without coffee',
   },
   {
     img:
@@ -51,6 +59,7 @@ const data = [
     location: 'Kochi, India',
     temperature: 24,
     date: dt,
+    desc: 'Another awesome morning, I can’t live a day without coffee',
   },
   {
     img:
@@ -58,6 +67,7 @@ const data = [
     location: 'Kochi, India',
     temperature: 24,
     date: dt,
+    desc: 'Another awesome morning, I can’t live a day without coffee',
   },
 ];
 

@@ -1,7 +1,7 @@
 import React from 'react';
 import {createStackNavigator} from '@react-navigation/stack';
 import Icon from 'react-native-remix-icon';
-import {AddAPost, DayEdit, Splash} from '../screens';
+import {AddAPost, DayEdit, DayView, Splash} from '../screens';
 import TabNavigator from './TabNavigator';
 import {Logo} from '../assets';
 import {Colors} from '../styles';
@@ -27,6 +27,7 @@ const StackNavigator = () => {
       <Stack.Screen name="Main" component={TabNavigator} />
       <Stack.Screen name="AddAPost" component={AddAPost} />
       <Stack.Screen name="DayEdit" component={DayEdit} />
+      <Stack.Screen name="DayView" component={DayView} />
     </Stack.Navigator>
   );
 };

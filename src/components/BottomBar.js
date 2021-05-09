@@ -8,8 +8,6 @@ const BottomBar = ({navigation, state, descriptors}) => {
   const getIconBasedOnRouteName = (routeName, color) => {
     if (routeName === 'PickADays') {
       return <Icon name="home-line" color={color} size={25} />;
-    } else if (routeName === 'AddAPic') {
-      return <Icon name="add-line" color={color} size={25} />;
     } else if (routeName === 'Summary') {
       return <Icon name="information-line" color={color} size={25} />;
     }
@@ -19,7 +17,12 @@ const BottomBar = ({navigation, state, descriptors}) => {
     <>
       <View style={[styles.row]}>
         {[state.routes[0], {}, state.routes[1]].map((route, index) => {
-          const isFocused = state.index === index;
+          const isFocused =
+            state.index === 0
+              ? state.index === index
+              : state.index === 1
+              ? index === 2
+              : false;
           const color = isFocused ? Colors.dark : Colors.tabBarInactive;
           //   const backgroundColor = 'red';
 

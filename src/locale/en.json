@@ -1,3 +1,5 @@
 {
-  "networkError": "Failed to connect any network!"
+  "networkError": "Failed to connect any network!",
+  "error":"Something went wrong! try again",
+  "textInput":"Type your thoughts..."
 }

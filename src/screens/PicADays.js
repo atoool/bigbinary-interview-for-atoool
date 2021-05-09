@@ -22,7 +22,7 @@ const styles = StyleSheet.create({
 const dt = Date.now();
 const data = [
   {
-    img:
+    uri:
       'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Image_created_with_a_mobile_phone.png/1200px-Image_created_with_a_mobile_phone.png',
     location: 'Kochi, India',
     temperature: 24,
@@ -30,7 +30,7 @@ const data = [
     desc: 'Another awesome morning, I can’t live a day without coffee',
   },
   {
-    img:
+    uri:
       'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Image_created_with_a_mobile_phone.png/1200px-Image_created_with_a_mobile_phone.png',
     location: 'Kochi, India',
     temperature: 24,
@@ -38,7 +38,7 @@ const data = [
     desc: 'Another awesome morning, I can’t live a day without coffee',
   },
   {
-    img:
+    uri:
       'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Image_created_with_a_mobile_phone.png/1200px-Image_created_with_a_mobile_phone.png',
     location: 'Kochi, India',
     temperature: 24,
@@ -46,7 +46,7 @@ const data = [
     desc: 'Another awesome morning, I can’t live a day without coffee',
   },
   {
-    img:
+    uri:
       'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Image_created_with_a_mobile_phone.png/1200px-Image_created_with_a_mobile_phone.png',
     location: 'Kochi, India',
     temperature: 24,
@@ -54,7 +54,7 @@ const data = [
     desc: 'Another awesome morning, I can’t live a day without coffee',
   },
   {
-    img:
+    uri:
       'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Image_created_with_a_mobile_phone.png/1200px-Image_created_with_a_mobile_phone.png',
     location: 'Kochi, India',
     temperature: 24,
@@ -62,7 +62,7 @@ const data = [
     desc: 'Another awesome morning, I can’t live a day without coffee',
   },
   {
-    img:
+    uri:
       'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Image_created_with_a_mobile_phone.png/1200px-Image_created_with_a_mobile_phone.png',
     location: 'Kochi, India',
     temperature: 24,

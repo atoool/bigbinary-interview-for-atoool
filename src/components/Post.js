@@ -4,13 +4,15 @@ import Icon from 'react-native-remix-icon';
 import Gradient from 'react-native-linear-gradient';
 import {Colors, Typography} from '../styles';
 import moment from 'moment';
+import {Touchable} from '.';
 
-const Post = ({
-  uri = '',
-  temperature = 0,
-  date = Date.now(),
-  location = 'Kochi, India',
-}) => {
+const Post = ({item, onPress}) => {
+  const {
+    uri = '',
+    temperature = 0,
+    date = Date.now(),
+    location = 'Kochi, India',
+  } = item;
   const gradient = [
     Colors.semiTransparent,
     Colors.transparent,
@@ -25,34 +27,36 @@ const Post = ({
   );
 
   return (
-    <ImageBackground
-      source={{
-        uri,
-      }}
-      style={styles.container}>
-      <GradientComponent angle={360}>
-        <GradientComponent angle={90}>
-          <View style={styles.dateBox}>
-            <Text style={Typography.bold14White}>
-              {moment(date).format('MMM')}
-            </Text>
-            <Text style={Typography.bold24White}>
-              {moment(date).format('DD')}
-            </Text>
-          </View>
+    <Touchable onPress={() => onPress(item)}>
+      <ImageBackground
+        source={{
+          uri,
+        }}
+        style={styles.container}>
+        <GradientComponent angle={360}>
+          <GradientComponent angle={90}>
+            <View style={styles.dateBox}>
+              <Text style={Typography.bold14White}>
+                {moment(date).format('MMM')}
+              </Text>
+              <Text style={Typography.bold24White}>
+                {moment(date).format('DD')}
+              </Text>
+            </View>
 
-          <View style={styles.locationBox}>
-            <Icon name="map-pin-3-line" color={Colors.WHITE} size={12} />
-            <Text style={styles.locationText}>{location}</Text>
-          </View>
+            <View style={styles.locationBox}>
+              <Icon name="map-pin-3-line" color={Colors.WHITE} size={12} />
+              <Text style={styles.locationText}>{location}</Text>
+            </View>
 
-          <View style={styles.temperatureBox}>
-            <Text style={styles.temperatureText}>{temperature}˚</Text>
-            <Icon name="sun-line" color={Colors.WHITE} size={12} />
-          </View>
+            <View style={styles.temperatureBox}>
+              <Text style={styles.temperatureText}>{temperature}˚</Text>
+              <Icon name="sun-line" color={Colors.WHITE} size={12} />
+            </View>
+          </GradientComponent>
         </GradientComponent>
-      </GradientComponent>
-    </ImageBackground>
+      </ImageBackground>
+    </Touchable>
   );
 };
 

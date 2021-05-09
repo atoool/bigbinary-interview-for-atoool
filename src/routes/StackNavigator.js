@@ -1,7 +1,7 @@
 import React from 'react';
 import {createStackNavigator} from '@react-navigation/stack';
 import Icon from 'react-native-remix-icon';
-import {AddAPost, DayEdit, DayView, Splash} from '../screens';
+import {AddAPost, DayEdit, DayView, PhotoView, Splash} from '../screens';
 import TabNavigator from './TabNavigator';
 import {Logo} from '../assets';
 import {Colors} from '../styles';
@@ -11,6 +11,11 @@ const Stack = createStackNavigator();
 const options = {
   headerTitle: () => <Logo />,
   headerTitleAlign: 'center',
+  headerStyle: {
+    height: 60,
+    borderBottomColor: Colors.border,
+    borderBottomWidth: 1,
+  },
   headerBackImage: () => (
     <Icon name="arrow-left-s-line" size={24} color={Colors.backButton} />
   ),
@@ -28,6 +33,7 @@ const StackNavigator = () => {
       <Stack.Screen name="AddAPost" component={AddAPost} />
       <Stack.Screen name="DayEdit" component={DayEdit} />
       <Stack.Screen name="DayView" component={DayView} />
+      <Stack.Screen name="PhotoView" component={PhotoView} />
     </Stack.Navigator>
   );
 };

@@ -12,6 +12,10 @@ const DayEdit = ({route, navigation}) => {
     locale: {locale},
   } = useContext(LocaleContext);
 
+  const onPhotoView = itm => {
+    navigation.navigate('PhotoView', {uri: itm?.uri});
+  };
+
   const {onChangeData} = useContext(AppContext);
 
   const onChangeText = txt => setText(txt);
@@ -27,7 +31,7 @@ const DayEdit = ({route, navigation}) => {
   return (
     <SafeAreaView style={styles.container}>
       <View>
-        <Post item={item} />
+        <Post item={item} onPress={onPhotoView} />
         <SnapButton style={styles.snapButton} onPress={onSubmit} />
       </View>
       <TextInput

@@ -1,6 +1,6 @@
 import React from 'react';
 import {FlatList, StyleSheet} from 'react-native';
-import {Post, Touchable} from '.';
+import {Post} from '.';
 
 const PostList = ({data, onPress}) => {
   return (
@@ -8,16 +8,7 @@ const PostList = ({data, onPress}) => {
       data={data}
       style={styles.container}
       keyExtractor={(item, index) => index.toString()}
-      renderItem={({item, index}) => (
-        <Touchable onPress={() => onPress(item, index)}>
-          <Post
-            uri={item?.img}
-            temperature={item?.temperature}
-            date={item?.date}
-            location={item?.location}
-          />
-        </Touchable>
-      )}
+      renderItem={({item}) => <Post item={item} onPress={onPress} />}
     />
   );
 };

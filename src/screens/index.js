@@ -4,4 +4,5 @@ import Summary from './Summary';
 import Splash from './Splash';
 import AddAPost from './AddAPost';
 import DayView from './DayView';
-export {Splash, DayEdit, PicADays, Summary, AddAPost, DayView};
+import PhotoView from './PhotoView';
+export {Splash, DayEdit, PicADays, Summary, AddAPost, DayView, PhotoView};

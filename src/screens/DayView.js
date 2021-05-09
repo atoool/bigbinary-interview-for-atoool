@@ -3,16 +3,15 @@ import {SafeAreaView, Text, StyleSheet} from 'react-native';
 import {Post} from '../components';
 import {Typography} from '../styles';
 
-const DayView = ({route}) => {
+const DayView = ({route, navigation}) => {
   const {item} = route?.params;
+
+  const onPhotoView = () => {
+    navigation.navigate('PhotoView', {uri: item?.uri});
+  };
   return (
     <SafeAreaView style={styles.container}>
-      <Post
-        uri={item?.img}
-        temperature={item?.temperature}
-        date={item?.date}
-        location={item?.location}
-      />
+      <Post item={item} onPress={onPhotoView} />
       <Text style={styles.text}>{item?.desc}</Text>
     </SafeAreaView>
   );

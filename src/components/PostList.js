@@ -1,20 +1,22 @@
 import React from 'react';
 import {FlatList, StyleSheet} from 'react-native';
-import {Post} from '.';
+import {Post, Touchable} from '.';
 
-const PostList = ({data}) => {
+const PostList = ({data, onPress}) => {
   return (
     <FlatList
       data={data}
       style={styles.container}
       keyExtractor={(item, index) => index.toString()}
       renderItem={({item, index}) => (
-        <Post
-          uri={item?.img}
-          temperature={item?.temperature}
-          date={item?.date}
-          location={item?.location}
-        />
+        <Touchable onPress={() => onPress(item, index)}>
+          <Post
+            uri={item?.img}
+            temperature={item?.temperature}
+            date={item?.date}
+            location={item?.location}
+          />
+        </Touchable>
       )}
     />
   );

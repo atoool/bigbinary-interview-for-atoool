@@ -2,7 +2,7 @@ import React, {useContext} from 'react';
 import {SafeAreaView, StyleSheet, TextInput, View} from 'react-native';
 import {Post, SnapButton} from '../components';
 import {AppContext} from '../contexts';
-import {Colors} from '../styles';
+import {Colors, Typography} from '../styles';
 
 const DayEdit = ({route, navigation}) => {
   const {uri} = route?.params;
@@ -32,7 +32,7 @@ const DayEdit = ({route, navigation}) => {
 const styles = StyleSheet.create({
   container: {flex: 1, backgroundColor: Colors.WHITE},
   snapButton: {bottom: -25, elevation: 5},
-  input: {marginTop: 45, marginHorizontal: 10},
+  input: {marginTop: 45, marginHorizontal: 10, ...Typography.normal15},
 });
 
 export default DayEdit;

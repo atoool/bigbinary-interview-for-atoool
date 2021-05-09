@@ -3,10 +3,10 @@ import {SafeAreaView, StyleSheet} from 'react-native';
 import {Camera} from '../components';
 import {Colors} from '../styles';
 
-const AddAPost = () => {
+const AddAPost = ({navigation}) => {
   return (
     <SafeAreaView style={styles.container}>
-      <Camera />
+      <Camera navigation={navigation} />
     </SafeAreaView>
   );
 };

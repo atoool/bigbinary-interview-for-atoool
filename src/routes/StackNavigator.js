@@ -19,7 +19,11 @@ const options = {
 const StackNavigator = () => {
   return (
     <Stack.Navigator screenOptions={options}>
-      <Stack.Screen name="Splash" component={Splash} />
+      <Stack.Screen
+        name="Splash"
+        component={Splash}
+        options={{headerShown: false}}
+      />
       <Stack.Screen name="Main" component={TabNavigator} />
       <Stack.Screen name="AddAPost" component={AddAPost} />
       <Stack.Screen name="DayEdit" component={DayEdit} />

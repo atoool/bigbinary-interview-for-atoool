@@ -1,7 +1,7 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import React, {useEffect} from 'react';
-import {SafeAreaView, Image, StyleSheet} from 'react-native';
-// import Images from '../../assets/images';
+import {SafeAreaView, StyleSheet} from 'react-native';
+import {Logo} from '../assets';
 
 const Splash = ({navigation}) => {
   useEffect(() => {
@@ -11,7 +11,7 @@ const Splash = ({navigation}) => {
   }, []);
   return (
     <SafeAreaView style={styles.container}>
-      {/* <Image style={styles.logoImage} source={Images.logo} /> */}
+      <Logo />
     </SafeAreaView>
   );
 };

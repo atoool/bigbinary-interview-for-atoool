@@ -1,11 +1,12 @@
 import React from 'react';
-import {SafeAreaView, StyleSheet, Text} from 'react-native';
+import {SafeAreaView, StyleSheet} from 'react-native';
+import {Camera} from '../components';
 import {Colors} from '../styles';
 
-const Summary = () => {
+const AddAPost = () => {
   return (
     <SafeAreaView style={styles.container}>
-      <Text>Summary</Text>
+      <Camera />
     </SafeAreaView>
   );
 };
@@ -14,4 +15,4 @@ const styles = StyleSheet.create({
   container: {flex: 1, backgroundColor: Colors.WHITE},
 });
 
-export default Summary;
+export default AddAPost;

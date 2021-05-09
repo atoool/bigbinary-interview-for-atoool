@@ -31,9 +31,12 @@ export default {
   primaryRed: '#FFF5F5',
   lightViolet: '#889BFF',
   lightBlue: '#566ae6',
-  semiTransparent: 'rgba(0,0,0,0.1)',
+  semiTransparent: 'rgba(0,0,0,0.7)',
   transparent: 'rgba(0,0,0,0)',
   divider: '#DFDEDE',
   textInputBorder: '#C5C5C5',
   lightYellow: '#FAF3BD',
+  lightGreen: '#00E3BA',
+  border: '#E8E8E8',
+  dark: '#314743',
 };

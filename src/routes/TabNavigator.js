@@ -1,14 +1,14 @@
 import React from 'react';
-import {createMaterialBottomTabNavigator} from '@react-navigation/material-bottom-tabs';
-import {AddAPic, PicADays, Summary} from '../screens';
+import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
+import {PicADays, Summary} from '../screens';
+import {BottomBar} from '../components';
 
-const Tab = createMaterialBottomTabNavigator();
+const Tab = createBottomTabNavigator();
 
 const TabNavigator = () => {
   return (
-    <Tab.Navigator>
-      <Tab.Screen name="PicADays" component={PicADays} />
-      <Tab.Screen name="AddAPic" component={AddAPic} />
+    <Tab.Navigator tabBar={props => <BottomBar {...props} />}>
+      <Tab.Screen name="PickADays" component={PicADays} />
       <Tab.Screen name="Summary" component={Summary} />
     </Tab.Navigator>
   );

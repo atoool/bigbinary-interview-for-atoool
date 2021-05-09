@@ -1,9 +1,14 @@
 import React from 'react';
+import {useEffect} from 'react';
 import {SafeAreaView, ScrollView, StyleSheet} from 'react-native';
 import {SummaryBox} from '../components';
 import {Colors} from '../styles';
 
 const Summary = () => {
+  useEffect(() => {
+    const onmount = async () => {};
+    onmount();
+  }, []);
   return (
     <SafeAreaView style={styles.container}>
       <ScrollView>

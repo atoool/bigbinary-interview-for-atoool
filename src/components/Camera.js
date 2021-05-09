@@ -2,13 +2,13 @@ import React, {createRef, useContext} from 'react';
 import {StyleSheet, ToastAndroid, View} from 'react-native';
 import {RNCamera} from 'react-native-camera';
 import {SnapButton} from '.';
-import {AppContext} from '../contexts';
+import {LocaleContext} from '../contexts';
 
-const Camera = ({navigation}) => {
+const Camera = ({onSnap}) => {
   const camera = createRef(null);
   const {
     locale: {locale},
-  } = useContext(AppContext);
+  } = useContext(LocaleContext);
 
   const takePicture = async () => {
     if (camera) {
@@ -16,7 +16,7 @@ const Camera = ({navigation}) => {
         const options = {quality: 1, base64: true};
         const data = await camera.current.takePictureAsync(options);
 
-        navigation.navigate('DayEdit', {uri: data.uri});
+        onSnap(data.uri);
       } catch (e) {
         ToastAndroid.show(locale?.error, ToastAndroid.SHORT);
       }

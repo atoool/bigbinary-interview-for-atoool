@@ -1,6 +1,10 @@
 import React, {useContext, useState} from 'react';
 import {NavigationContainer} from '@react-navigation/native';
-import {AppContext, AppContextProvider} from './src/contexts';
+import {
+  LocaleContextProvider,
+  AppContextProvider,
+  LocaleContext,
+} from './src/contexts';
 import {StackNavigator} from './src/routes';
 import {useNetwork, useStatusbar} from './src/hooks';
 import {SnackBar} from './src/components';
@@ -11,7 +15,7 @@ const App = () => {
 
   const {
     locale: {locale},
-  } = useContext(AppContext);
+  } = useContext(LocaleContext);
 
   const onChangeNetwork = net => setShowSnack(net);
 
@@ -20,16 +24,18 @@ const App = () => {
   useStatusbar();
 
   return (
-    <AppContextProvider>
-      <NavigationContainer>
-        <StackNavigator />
-      </NavigationContainer>
-      <SnackBar
-        style={styles.snack}
-        title={locale?.networkError}
-        showSnack={showSnack}
-      />
-    </AppContextProvider>
+    <LocaleContextProvider>
+      <AppContextProvider>
+        <NavigationContainer>
+          <StackNavigator />
+        </NavigationContainer>
+        <SnackBar
+          style={styles.snack}
+          title={locale?.networkError}
+          showSnack={showSnack}
+        />
+      </AppContextProvider>
+    </LocaleContextProvider>
   );
 };
 

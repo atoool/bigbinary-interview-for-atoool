@@ -1,29 +1,41 @@
-import React, {useContext} from 'react';
+import React, {useContext, useState} from 'react';
 import {SafeAreaView, StyleSheet, TextInput, View} from 'react-native';
 import {Post, SnapButton} from '../components';
-import {AppContext} from '../contexts';
+import {AppContext, LocaleContext} from '../contexts';
 import {Colors, Typography} from '../styles';
 
 const DayEdit = ({route, navigation}) => {
-  const {uri} = route?.params;
+  const {item} = route?.params;
+  const [text, setText] = useState('');
 
   const {
     locale: {locale},
-  } = useContext(AppContext);
+  } = useContext(LocaleContext);
+
+  const {onChangeData} = useContext(AppContext);
+
+  const onChangeText = txt => setText(txt);
 
   const onSubmit = () => {
-    navigation.popToTop();
+    try {
+      const itm = {...item, desc: text};
+      onChangeData(itm);
+      navigation.popToTop();
+    } catch {}
   };
+
   return (
     <SafeAreaView style={styles.container}>
       <View>
-        <Post uri={uri} />
+        <Post item={item} />
         <SnapButton style={styles.snapButton} onPress={onSubmit} />
       </View>
       <TextInput
         placeholder={locale?.textInput}
+        placeholderTextColor={Colors.gray}
         style={styles.input}
         multiline={true}
+        onChangeText={onChangeText}
       />
     </SafeAreaView>
   );
@@ -32,7 +44,12 @@ const DayEdit = ({route, navigation}) => {
 const styles = StyleSheet.create({
   container: {flex: 1, backgroundColor: Colors.WHITE},
   snapButton: {bottom: -25, elevation: 5},
-  input: {marginTop: 45, marginHorizontal: 10, ...Typography.normal15},
+  input: {
+    marginTop: 45,
+    marginHorizontal: 10,
+    ...Typography.normal15,
+    color: Colors.BLACK,
+  },
 });
 
 export default DayEdit;

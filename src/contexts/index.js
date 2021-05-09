@@ -1,2 +1,3 @@
 import {AppContext, AppContextProvider} from './AppContext';
-export {AppContext, AppContextProvider};
+import {LocaleContext, LocaleContextProvider} from './LocaleContext';
+export {AppContext, AppContextProvider, LocaleContext, LocaleContextProvider};

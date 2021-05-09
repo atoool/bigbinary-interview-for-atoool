@@ -6,7 +6,7 @@ import {Colors, Typography} from '../styles';
 import moment from 'moment';
 import {Touchable} from '.';
 
-const Post = ({item, onPress}) => {
+const Post = ({item, onPress = () => {}}) => {
   const {
     uri = '',
     temperature = 0,

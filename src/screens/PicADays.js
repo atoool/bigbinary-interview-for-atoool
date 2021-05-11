@@ -12,7 +12,7 @@ const PicADays = ({navigation}) => {
 
   return (
     <SafeAreaView style={styles.container}>
-      <PostList data={data.reverse()} onPress={onPostClick} />
+      <PostList key={data} data={data} onPress={onPostClick} />
     </SafeAreaView>
   );
 };

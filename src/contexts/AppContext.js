@@ -27,17 +27,17 @@ export const AppContextProvider = ({children}) => {
   const onChangeData = async item => {
     try {
       const length = data?.length;
-      const lastItem = data[length - 1];
-      let tempData = [...data, item];
+      const lastItem = data[0];
+      let tempData = [item, ...data];
       if (
         length !== 0 &&
         moment(item?.date).format('DD/MM/YY') ===
           moment(lastItem?.date).format('DD/MM/YY')
       ) {
         tempData = data;
-        tempData[lastItem] = item;
+        tempData[0] = item;
       }
-      setData(tempData);
+      setData([...tempData]);
       await Storage.setItem('appData', tempData);
     } catch {}
   };

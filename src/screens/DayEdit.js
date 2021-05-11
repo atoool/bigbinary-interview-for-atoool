@@ -1,7 +1,10 @@
-import React, {useContext, useState} from 'react';
+/* eslint-disable react-hooks/exhaustive-deps */
+import {CommonActions} from '@react-navigation/native';
+import React, {useContext, useEffect, useState} from 'react';
 import {SafeAreaView, StyleSheet, TextInput, View} from 'react-native';
 import {Post, SnapButton} from '../components';
 import {AppContext, LocaleContext} from '../contexts';
+import useBackHandler from '../hooks/useBackHandler';
 import {Colors, Typography} from '../styles';
 
 const DayEdit = ({route, navigation}) => {
@@ -20,19 +23,39 @@ const DayEdit = ({route, navigation}) => {
 
   const onChangeText = txt => setText(txt);
 
+  const onSnapPress = () => navigation.navigate('AddAPost');
+
   const onSubmit = () => {
     try {
       const itm = {...item, desc: text};
       onChangeData(itm);
-      navigation.popToTop();
     } catch {}
   };
+
+  useBackHandler(navigation, onSubmit);
+
+  const resetNavigation = () => {
+    navigation.dispatch(state => {
+      // Remove the home route from the stack
+      const routes = state.routes.filter(r => r.name !== 'AddAPost');
+
+      return CommonActions.reset({
+        ...state,
+        routes,
+        index: routes.length - 1,
+      });
+    });
+  };
+
+  useEffect(() => {
+    resetNavigation();
+  }, []);
 
   return (
     <SafeAreaView style={styles.container}>
       <View>
         <Post item={item} onPress={onPhotoView} />
-        <SnapButton style={styles.snapButton} onPress={onSubmit} />
+        <SnapButton style={styles.snapButton} onPress={onSnapPress} />
       </View>
       <TextInput
         placeholder={locale?.textInput}

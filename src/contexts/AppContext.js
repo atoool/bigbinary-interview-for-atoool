@@ -1,6 +1,5 @@
-import moment from 'moment';
 import React, {createContext, useEffect, useState} from 'react';
-import {Storage} from '../utils';
+import {onCheckDate, Storage} from '../utils';
 
 export const AppContext = createContext({
   weather: {},
@@ -26,14 +25,9 @@ export const AppContextProvider = ({children}) => {
   const onChangeWeather = val => setWeather(val);
   const onChangeData = async item => {
     try {
-      const length = data?.length;
-      const lastItem = data[0];
       let tempData = [item, ...data];
-      if (
-        length !== 0 &&
-        moment(item?.date).format('DD/MM/YY') ===
-          moment(lastItem?.date).format('DD/MM/YY')
-      ) {
+      let isSameDate = onCheckDate(item, data);
+      if (isSameDate) {
         tempData = data;
         tempData[0] = item;
       }

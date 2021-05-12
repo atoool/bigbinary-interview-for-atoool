@@ -1,6 +1,6 @@
 import React, {useContext} from 'react';
 import {SafeAreaView, StyleSheet} from 'react-native';
-import {PostList} from '../components';
+import {EmptyComponent, PostList} from '../components';
 import {AppContext} from '../contexts';
 import {Colors} from '../styles';
 import {onCheckDate} from '../utils';
@@ -13,7 +13,9 @@ const PicADays = ({navigation}) => {
       ? navigation.navigate('DayEdit', {item})
       : navigation.navigate('DayView', {item});
   };
-
+  if (data.length === 0) {
+    return <EmptyComponent />;
+  }
   return (
     <SafeAreaView style={styles.container}>
       <PostList data={data} onPress={onPostClick} />

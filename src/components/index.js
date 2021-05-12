@@ -1,5 +1,6 @@
 import BottomBar from './BottomBar';
 import Camera from './Camera';
+import EmptyComponent from './EmptyComponent';
 import Post from './Post';
 import PostList from './PostList';
 import SnackBar from './SnackBar';
@@ -15,4 +16,5 @@ export {
   Camera,
   SnapButton,
   SummaryBox,
+  EmptyComponent,
 };

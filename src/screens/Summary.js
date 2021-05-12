@@ -2,7 +2,7 @@ import moment from 'moment';
 import React, {useContext} from 'react';
 import {useEffect} from 'react';
 import {SafeAreaView, ScrollView, StyleSheet} from 'react-native';
-import {SummaryBox} from '../components';
+import {EmptyComponent, SummaryBox} from '../components';
 import {AppContext} from '../contexts';
 import {Colors} from '../styles';
 
@@ -15,30 +15,29 @@ const Summary = () => {
 
   const recordedDays = data.length;
 
+  if (recordedDays === 0) {
+    return <EmptyComponent />;
+  }
+
   const getProgressData = () => {
-    if (recordedDays !== 0) {
-      const startedOn = data[recordedDays - 1]?.date;
-      const totalDays = moment().diff(moment(startedOn), 'days');
-      return `${recordedDays}/${totalDays}`;
-    }
-    return '0/0';
+    const startedOn = data[recordedDays - 1]?.date;
+    const totalDays = moment().diff(moment(startedOn), 'days') + 1;
+    return `${recordedDays}/${totalDays}`;
   };
 
   const getHighestTemp = () => {
-    if (recordedDays !== 0) {
-      highest = data[0].temperature;
-      lowest = highest;
-      data?.map(itm => {
-        if (itm?.temperature > highest) {
-          highest = itm?.temperature;
-          highestDay = moment(itm.date).format('ddd MMM DD, YYYY');
-        } else if (itm?.temperature < lowest) {
-          lowest = itm?.temperature;
-          lowestDay = moment(itm.date).format('ddd MMM DD, YYYY');
-        }
-      });
-      return {lowest, highest, lowestDay, highestDay};
-    }
+    highest = data[0].temperature;
+    lowest = highest;
+    data?.map(itm => {
+      if (itm?.temperature > highest) {
+        highest = itm?.temperature;
+        highestDay = moment(itm.date).format('ddd MMM DD, YYYY');
+      } else if (itm?.temperature < lowest) {
+        lowest = itm?.temperature;
+        lowestDay = moment(itm.date).format('ddd MMM DD, YYYY');
+      }
+    });
+    return {lowest, highest, lowestDay, highestDay};
   };
 
   let today = moment().format('ddd MMM DD, YYYY');
@@ -52,7 +51,9 @@ const Summary = () => {
   const dayData = {
     title: 'Days',
     mainText: getProgressData(),
-    subText: `You have recorded ${data.length} days since the first day`,
+    subText: `You have recorded ${
+      recordedDays === 1 ? recordedDays + ' day' : recordedDays + ' days'
+    } since the first day`,
   };
 
   const highTempData = {

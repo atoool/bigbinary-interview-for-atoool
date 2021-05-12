@@ -9,7 +9,7 @@ import {Colors, Typography} from '../styles';
 
 const DayEdit = ({route, navigation}) => {
   const {item} = route?.params;
-  const [text, setText] = useState('');
+  const [text, setText] = useState(item?.desc ? item?.desc : '');
 
   const {
     locale: {locale},
@@ -58,6 +58,7 @@ const DayEdit = ({route, navigation}) => {
         <SnapButton style={styles.snapButton} onPress={onSnapPress} />
       </View>
       <TextInput
+        value={text}
         placeholder={locale?.textInput}
         placeholderTextColor={Colors.gray}
         style={styles.input}

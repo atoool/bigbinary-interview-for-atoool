@@ -14,7 +14,8 @@
     "move:aab": "mv android/app/build/outputs/apk/release/app-release.aab ~/Desktop/$npm_package_name-$npm_package_version-$npm_package_buildNumber.aab",
     "build:apk": "cd android && ./gradlew assembleRelease && cd .. && yarn move:apk",
     "build:aab": "cd android && ./gradlew bundleRelease && cd .. && yarn move:aab",
-    "run:apk": "yarn android --variant=release && yarn move:apk"
+    "run:apk": "yarn android --variant=release && yarn move:apk",
+    "run:pod":"cd ios && pod install && cd .."
   },
   "dependencies": {
     "@react-native-async-storage/async-storage": "^1.15.3",

@@ -2,8 +2,7 @@ import React from 'react';
 import {View, Text, StyleSheet} from 'react-native';
 import {Colors, Typography} from '../styles';
 
-const SummaryBox = ({data}) => {
-  const {title = '', mainText = '', subText = ''} = data;
+const SummaryBox = ({title = '', mainText = '', subText = ''}) => {
   return (
     <View style={styles.container}>
       <Text style={styles.title}>{title}</Text>

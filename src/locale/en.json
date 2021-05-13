@@ -1,5 +1,8 @@
 {
   "networkError": "Failed to connect any network!",
   "error":"Something went wrong! try again",
-  "textInput":"Type your thoughts..."
+  "textInput":"Type your thoughts...",
+  "days":"Days",
+  "hotDay":"Hottest day",
+  "coldDay":"Coldest day"
 }

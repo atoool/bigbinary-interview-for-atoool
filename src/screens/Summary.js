@@ -51,12 +51,12 @@ const Summary = () => {
         />
         <SummaryBox
           title={locale?.hotDay}
-          mainText={`${highest}˚`}
+          mainText={`${highest ? highest : 0}˚`}
           subText={highestDay}
         />
         <SummaryBox
           title={locale?.coldDay}
-          mainText={`${lowest}˚`}
+          mainText={`${lowest ? lowest : 0}˚`}
           subText={lowestDay}
         />
       </ScrollView>

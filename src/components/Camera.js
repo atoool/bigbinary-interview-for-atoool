@@ -33,10 +33,10 @@ const Camera = ({onSnap}) => {
         type={RNCamera.Constants.Type.back}
         flashMode={RNCamera.Constants.FlashMode.off}
         androidCameraPermissionOptions={{
-          title: 'Permission to use camera',
-          message: 'We need your permission to use your camera',
-          buttonPositive: 'Ok',
-          buttonNegative: 'Cancel',
+          title: locale?.permit,
+          message: locale?.permitText,
+          buttonPositive: locale?.ok,
+          buttonNegative: locale?.cancel,
         }}
         captureAudio={false}
         playSoundOnCapture>

@@ -5,14 +5,16 @@ import {AddAPost, DayEdit, DayView, PhotoView, Splash} from '../screens';
 import TabNavigator from './TabNavigator';
 import {Logo} from '../assets';
 import {Colors} from '../styles';
+import {Platform} from 'react-native';
 
 const Stack = createStackNavigator();
 
 const options = {
   headerTitle: () => <Logo />,
   headerTitleAlign: 'center',
+  headerBackTitleVisible: false,
   headerStyle: {
-    height: 60,
+    height: Platform.OS === 'ios' ? 90 : 60,
     borderBottomColor: Colors.border,
     borderBottomWidth: 1,
   },

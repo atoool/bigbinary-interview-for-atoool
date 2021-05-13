@@ -1,10 +1,10 @@
 import React from 'react';
-import {StatusBar} from 'react-native';
+import {Platform, StatusBar} from 'react-native';
 import {Colors} from '../styles';
 
 const useStatusbar = () => {
   React.useEffect(() => {
-    StatusBar.setBackgroundColor(Colors.WHITE);
+    Platform.OS === 'android' && StatusBar.setBackgroundColor(Colors.WHITE);
   }, []);
 };
 

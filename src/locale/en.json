@@ -4,5 +4,9 @@
   "textInput":"Type your thoughts...",
   "days":"Days",
   "hotDay":"Hottest day",
-  "coldDay":"Coldest day"
+  "coldDay":"Coldest day",
+  "permit": "Permission to use camera",
+  "permitText":"We need your permission to use your camera",
+  "ok":"Ok",
+  "cancel":"Cancel"
 }

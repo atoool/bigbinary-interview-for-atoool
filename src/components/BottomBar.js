@@ -1,5 +1,5 @@
 import React from 'react';
-import {StyleSheet, View} from 'react-native';
+import {Platform, StyleSheet, View} from 'react-native';
 import {Colors, Typography} from '../styles';
 import Icon from 'react-native-remix-icon';
 import {Touchable} from '.';
@@ -72,7 +72,7 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderColor: Colors.border,
     paddingVertical: 5,
-    height: 56,
+    height: Platform.OS === 'ios' ? 65 : 56,
   },
   flex1: {flex: 1},
   tabContainer: {
@@ -89,7 +89,7 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderColor: Colors.border,
     position: 'absolute',
-    bottom: 12,
+    bottom: Platform.OS === 'ios' ? 28 : 12,
   },
   touchableBox: {
     width: 25,

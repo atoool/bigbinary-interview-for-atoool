@@ -6,7 +6,7 @@ import {Colors, Typography} from '../styles';
 import moment from 'moment';
 import {Touchable} from '.';
 
-const Post = ({item, onPress = () => {}}) => {
+const Post = ({item, index = 0, onPress = () => {}}) => {
   const {
     uri = '',
     temperature = 0,
@@ -27,7 +27,7 @@ const Post = ({item, onPress = () => {}}) => {
   );
 
   return (
-    <Touchable onPress={() => onPress(item)}>
+    <Touchable onPress={() => onPress(item, index)}>
       <ImageBackground
         source={{
           uri,

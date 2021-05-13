@@ -8,7 +8,9 @@ const PostList = ({data, onPress}) => {
       data={data}
       style={styles.container}
       keyExtractor={(item, index) => index.toString()}
-      renderItem={({item}) => <Post item={item} onPress={onPress} />}
+      renderItem={({item, index}) => (
+        <Post index={index} item={item} onPress={onPress} />
+      )}
     />
   );
 };

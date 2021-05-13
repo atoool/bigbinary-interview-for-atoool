@@ -268,7 +268,7 @@
 						TestTargetID = 13B07F861A680F5B00A75B9A;
 					};
 					13B07F861A680F5B00A75B9A = {
-						LastSwiftMigration = 1120;
+						LastSwiftMigration = 1240;
 					};
 				};
 			};
@@ -458,7 +458,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = F1434EB4765833E76E2CE264 /* Pods-picaday-picadayTests.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -486,7 +485,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = AFB0D240EFF19A2B937EF282 /* Pods-picaday-picadayTests.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COPY_PHASE_STRIP = NO;
 				INFOPLIST_FILE = picadayTests/Info.plist;
@@ -529,6 +527,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.test.picaday;
 				PRODUCT_NAME = picaday;
+				SWIFT_OBJC_BRIDGING_HEADER = "picaday-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -557,6 +556,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.test.picaday;
 				PRODUCT_NAME = picaday;
+				SWIFT_OBJC_BRIDGING_HEADER = "picaday-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 				VERSIONING_SYSTEM = "apple-generic";

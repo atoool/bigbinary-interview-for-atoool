@@ -7,7 +7,6 @@ const useWeather = onSetData => {
     const onLoad = async () => {
       try {
         const coords = await getCurrentLoc();
-        console.warn(coords);
         const {longitude, latitude} = coords;
         const data = await getWeather({longitude, latitude});
         const {

@@ -12,7 +12,6 @@ const getCurrentLoc = async () => {
   return new Promise(function (myResolve, myReject) {
     Geolocation.getCurrentPosition(
       async pos => {
-        console.warn(pos);
         myResolve(pos.coords);
       },
       e => {

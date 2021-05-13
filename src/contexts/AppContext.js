@@ -26,7 +26,7 @@ export const AppContextProvider = ({children}) => {
   const onChangeData = async item => {
     try {
       let tempData = [item, ...data];
-      let isSameDate = onCheckDate(item, data);
+      let isSameDate = onCheckDate(data[0]?.date);
       if (isSameDate) {
         tempData = data;
         tempData[0] = item;

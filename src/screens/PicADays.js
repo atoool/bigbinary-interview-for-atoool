@@ -8,7 +8,7 @@ import {onCheckDate} from '../utils';
 const PicADays = ({navigation}) => {
   const {data} = useContext(AppContext);
   const onPostClick = (item, i) => {
-    const isSameDate = onCheckDate(item, data);
+    const isSameDate = onCheckDate(data[i].date);
     isSameDate
       ? navigation.navigate('DayEdit', {item})
       : navigation.navigate('DayView', {item});

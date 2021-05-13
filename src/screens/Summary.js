@@ -41,7 +41,7 @@ const Summary = () => {
 
   return (
     <SafeAreaView style={styles.container}>
-      <ScrollView>
+      <ScrollView showsVerticalScrollIndicator={false}>
         <SummaryBox
           title={locale?.days}
           mainText={`${recordedDays}/${totalDays}`}

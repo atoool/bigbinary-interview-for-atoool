@@ -1,7 +1,13 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import {CommonActions} from '@react-navigation/native';
 import React, {useContext, useEffect, useState} from 'react';
-import {SafeAreaView, StyleSheet, TextInput, View} from 'react-native';
+import {
+  SafeAreaView,
+  ScrollView,
+  StyleSheet,
+  TextInput,
+  View,
+} from 'react-native';
 import {Post, SnapButton} from '../components';
 import {AppContext, LocaleContext} from '../contexts';
 import useBackHandler from '../hooks/useBackHandler';
@@ -53,18 +59,21 @@ const DayEdit = ({route, navigation}) => {
 
   return (
     <SafeAreaView style={styles.container}>
-      <View>
-        <Post item={item} onPress={onPhotoView} />
-        <SnapButton style={styles.snapButton} onPress={onSnapPress} />
-      </View>
-      <TextInput
-        value={text}
-        placeholder={locale?.textInput}
-        placeholderTextColor={Colors.gray}
-        style={styles.input}
-        multiline={true}
-        onChangeText={onChangeText}
-      />
+      <ScrollView showsVerticalScrollIndicator={false}>
+        <View>
+          <Post item={item} onPress={onPhotoView} />
+          <SnapButton style={styles.snapButton} onPress={onSnapPress} />
+        </View>
+        <TextInput
+          value={text}
+          scrollEnabled={false}
+          placeholder={locale?.textInput}
+          placeholderTextColor={Colors.gray}
+          style={styles.input}
+          multiline={true}
+          onChangeText={onChangeText}
+        />
+      </ScrollView>
     </SafeAreaView>
   );
 };
